@@ -2,7 +2,7 @@ module.exports = function (context, req) {
     var nodemailer = require('nodemailer');
 
     const email_to = req.query.email_to ? JSON.parse(req.query.email_to) : undefined;
-    const {email_subject} = req.query
+    const {email_subject} = req.query;
 
     if (email_to && email_subject) {
         var transporter = nodemailer.createTransport({
@@ -32,10 +32,10 @@ module.exports = function (context, req) {
     
         Promise.all(email_promises)
             .then(() => {
-                console.log("success!")
+                console.log("success!");
                 context.res = {
                     body: "success: true"
-                }
+                };
                 context.done()
             })
             .catch((error) => {
@@ -43,7 +43,7 @@ module.exports = function (context, req) {
                 context.res = {
                     status: 400,
                     body: "success: false"
-                }
+                };
                 context.done()
             })
     }
