@@ -1,0 +1,88 @@
+{
+    "Nome": "Tadeu Test",
+    "Email": "jorgepexotaum@gmail.com",
+    "Subject": "Alarmes da Semana",
+    "Dados": [
+        {
+            "nome_alarme": "ESTOQUE VIRTUAL",
+            "prioridade": "ALTA",
+            "dados": [
+                {
+                    "TIMESTAMP": 1570026117553,
+                    "CHAVE_ACCERA": "CBD1363",
+                    "LOJA_SPOT": "8701",
+                    "SKU_PERNOD_UNICO": 6400,
+                    "ScheduleC": "BAF",
+                    "NOME_SKU": "BALLANTINES FINEST 1L",
+                    "KEY_BRAND": "BALLANTINES FINEST",
+                    "QUADRANTE_NIELSEN": "Q3",
+                    "REDE": "CBD",
+                    "BANDEIRA": "Extra",
+                    "ESTADO": "AL",
+                    "CIDADE": "MACEIO",
+                    "ALARME_ESTOQUE_VIRTUAL": 1
+                },
+                {
+                    "TIMESTAMP": 1570026117553,
+                    "CHAVE_ACCERA": "CBD2459",
+                    "LOJA_SPOT": "8882",
+                    "SKU_PERNOD_UNICO": 6361,
+                    "ScheduleC": "ABT",
+                    "NOME_SKU": "ABSOLUT REGULAR 1L",
+                    "KEY_BRAND": "ABSOLUT",
+                    "FORMATO_LOJA": "TOTAL BRASIL AS SUPER",
+                    "QUADRANTE_NIELSEN": "Q2",
+                    "REDE": "CBD",
+                    "BANDEIRA": "Po de Acar",
+                    "ESTADO": "SP",
+                    "CIDADE": "SAO PAULO",
+                    "ALARME_ESTOQUE_VIRTUAL": 1
+                }
+            ]
+        },
+        {
+            "nome_alarme": "RUPTURA",
+            "prioridade": "BAIXA",
+            "dados": [
+                {
+                    "TIMESTAMP": 1570026117553,
+                    "CHAVE_ACCERA": "CBD1363",
+                    "LOJA_SPOT": "8701",
+                    "SKU_PERNOD_UNICO": 6400,
+                    "ScheduleC": "BAF",
+                    "NOME_SKU": "BALLANTINES FINEST 1L",
+                    "KEY_BRAND": "BALLANTINES FINEST",
+                    "FORMATO_LOJA": "TOTAL BRASIL AS HIPER",
+                    "COD_SALESMAN_LEVEL_1": "40A",
+                    "COD_SALESMAN_LEVEL_2": "40",
+                    "COD_SALESMAN_LEVEL_3": "40",
+                    "COD_SALESMAN_LEVEL_4": "4",
+                    "NM_SALESMAN_LEVEL_1": "0",
+                    "NM_SALESMAN_LEVEL_2": "ROBERTA MARQUES",
+                    "NM_SALESMAN_LEVEL_3": "0",
+                    "NM_SALESMAN_LEVEL_4": "CLAUDIO BARBOSA",
+                    "PROMOTOR_SPOT": "LUIS AMARO BOMFIM NETO"
+                },
+                {
+                    "TIMESTAMP": 1570026117553,
+                    "CHAVE_ACCERA": "CBD2459",
+                    "LOJA_SPOT": "8882",
+                    "SKU_PERNOD_UNICO": 6361,
+                    "ScheduleC": "ABT",
+                    "NOME_SKU": "ABSOLUT REGULAR 1L",
+                    "KEY_BRAND": "ABSOLUT",
+                    "FORMATO_LOJA": "TOTAL BRASIL AS SUPER",
+                    "COD_SALESMAN_LEVEL_1": "40A",
+                    "COD_SALESMAN_LEVEL_2": "40",
+                    "COD_SALESMAN_LEVEL_3": "40",
+                    "COD_SALESMAN_LEVEL_4": "4",
+                    "NM_SALESMAN_LEVEL_1": "0",
+                    "NM_SALESMAN_LEVEL_2": "ROBERTA MARQUES",
+                    "NM_SALESMAN_LEVEL_3": "0",
+                    "NM_SALESMAN_LEVEL_4": "CLAUDIO BARBOSA",
+                    "PROMOTOR_SPOT": "PAULO HENRIQUE OLIVEIRA DOS SANTOS"
+                }
+            ]
+        }
+    ]
+}
