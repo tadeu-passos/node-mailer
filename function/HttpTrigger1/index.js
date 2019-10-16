@@ -35,12 +35,14 @@ module.exports = function (context, req) {
                 row_body += '</tr>';
             });
 
+            const dado_date = dado.date ? 'Ocorrencias em: ' + dado.date : '';
+
             return '<div style="min-width: 890px; width: 100%; margin-top: 24px; overflow-x: auto; margin-bottom: 16px;border-radius: 4px;color: rgba(0, 0, 0, 0.87); transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; background-color: #fff; border-style: solid;border-width: thin;border-color: #dadce0;"> <div style="padding-left: 16px; padding-right: 16px; padding-top: 16px; min-height: 64px;display: flex; position: relative; align-items: center;"> <table style="min-width: 650px;width: 100%; display: table; border-spacing: 0; border-collapse: collapse;"> <tr> <td style="width: 34%"> <h6 style="font-size: 1.25rem; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; font-weight: 500; line-height: 1.6; letter-spacing: 0.0075em;margin: 0;">' +
                 dado.nome_alarme +
-                '</h6> </td> <td style="width: 33%"> <h6 style="text-align: center; font-size: 1.25rem; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; font-weight: 500; line-height: 1.6; letter-spacing: 0.0075em;margin: 0;"> Prioridade: <span style="color: red">' +
+                '</h6> </td> <td style="width: 33%"> <h6 style="text-align: center; font-size: 1.25rem; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; font-weight: 500; line-height: 1.6; letter-spacing: 0.0075em;margin: 0;"><span style="color: rgba(0, 0, 0, 0.54)">' +
                 dado.prioridade +
-                '</span> </h6> </td> <td style="width: 33%"> <p style="color: rgba(0, 0, 0, 0.54);text-align: right; min-width: 160px; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif;"> Ocorrencias em: ' +
-                '10/05/2019' +
+                '</span> </h6> </td> <td style="width: 33%"> <p style="color: rgba(0, 0, 0, 0.54);text-align: right; min-width: 160px; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif;"> ' +
+                 dado_date +
                 '</p> </td> </tr> </table> </div> <table style="min-width: 650px;width: 100%; display: table; border-spacing: 0; border-collapse: collapse;"> <thead style="display: table-header-group;"> <tr style="color: inherit; display: table-row; outline: 0; vertical-align: middle;">' +
                 row_names +
                 '</tr> </thead> <tbody style="display: table-row-group;">' +
@@ -78,16 +80,6 @@ module.exports = function (context, req) {
                 };
                 context.done()
             });
-
-        // console.log('================================================');
-        // console.log(nome);
-        // console.log('================================================');
-        // console.log( email );
-        // console.log('================================================');
-        // console.log( subject );
-        // console.log('================================================');
-        // console.log( dados);
-        // console.log('================================================');
     }
     else {
         context.res = {
