@@ -21,7 +21,7 @@ module.exports = function (context, req) {
             const row_names_array = dado.dados[0];
             let row_names = '';
             Object.keys(row_names_array).forEach(col => {
-                row_names += '<th style="padding: 6px 24px 6px 16px;color: rgba(0, 0, 0, 0.54); font-size: 0.75rem; font-weight: 500; line-height: 1.3125rem;display: table-cell; text-align: left; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; border-bottom: 1px solid rgba(224, 224, 224, 1); letter-spacing: 0.01071em; vertical-align: inherit;" scope="col"> ' +
+                row_names += '<th style="white-space: nowrap; padding: 6px 24px 6px 16px;color: rgba(0, 0, 0, 0.54); font-size: 0.75rem; font-weight: 500; line-height: 1.3125rem;display: table-cell; text-align: left; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; border-bottom: 1px solid rgba(224, 224, 224, 1); letter-spacing: 0.01071em; vertical-align: inherit;" scope="col"> ' +
                     col + ' </th>';
             });
 
@@ -29,7 +29,7 @@ module.exports = function (context, req) {
             dado.dados.forEach(row => {
                 row_body += '<tr style="color: inherit; display: table-row; outline: 0; vertical-align: middle;">';
                 Object.keys(row).forEach(col => {
-                    row_body += '<th style="padding: 6px 24px 6px 16px;color: rgba(0, 0, 0, 0.87); font-weight: 400;display: table-cell; font-size: 0.875rem; text-align: left; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; line-height: 1.43; border-bottom: 1px solid rgba(224, 224, 224, 1); letter-spacing: 0.01071em; vertical-align: inherit;" scope="row">' +
+                    row_body += '<th style="white-space: nowrap; padding: 6px 24px 6px 16px;color: rgba(0, 0, 0, 0.87); font-weight: 400;display: table-cell; font-size: 0.875rem; text-align: left; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; line-height: 1.43; border-bottom: 1px solid rgba(224, 224, 224, 1); letter-spacing: 0.01071em; vertical-align: inherit;" scope="row">' +
                         row[col] + '</th>';
                 });
                 row_body += '</tr>';
