@@ -21,7 +21,7 @@ module.exports = function (context, req) {
             const row_names_array = dado.dados[0];
             let row_names = '';
             Object.keys(row_names_array).forEach(col => {
-                row_names += '<th style="white-space: nowrap; padding: 6px 24px 6px 16px;color: rgba(0, 0, 0, 0.54); font-size: 0.75rem; font-weight: 500; line-height: 1.3125rem;display: table-cell; text-align: left; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; border-bottom: 1px solid rgba(224, 224, 224, 1); letter-spacing: 0.01071em; vertical-align: inherit;" scope="col"> ' +
+                row_names += '<th style="white-space: nowrap; padding: 6px 24px 6px 16px;color: rgba(0, 0, 0, 0.54); font-size: 0.75rem; font-weight: 500; line-height: 1.3125rem;display: table-cell; text-align: center; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; border-bottom: 1px solid rgba(224, 224, 224, 1); letter-spacing: 0.01071em; vertical-align: inherit;" scope="col"> ' +
                     col + ' </th>';
             });
 
@@ -29,7 +29,7 @@ module.exports = function (context, req) {
             dado.dados.forEach(row => {
                 row_body += '<tr style="color: inherit; display: table-row; outline: 0; vertical-align: middle;">';
                 Object.keys(row).forEach(col => {
-                    row_body += '<th style="white-space: nowrap; padding: 6px 24px 6px 16px;color: rgba(0, 0, 0, 0.87); font-weight: 400;display: table-cell; font-size: 0.875rem; text-align: left; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; line-height: 1.43; border-bottom: 1px solid rgba(224, 224, 224, 1); letter-spacing: 0.01071em; vertical-align: inherit;" scope="row">' +
+                    row_body += '<th style="white-space: nowrap; padding: 6px 24px 6px 16px;color: rgba(0, 0, 0, 0.87); font-weight: 400;display: table-cell; font-size: 0.875rem; text-align: center; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; line-height: 1.43; border-bottom: 1px solid rgba(224, 224, 224, 1); letter-spacing: 0.01071em; vertical-align: inherit;" scope="row">' +
                         row[col] + '</th>';
                 });
                 row_body += '</tr>';
@@ -41,7 +41,7 @@ module.exports = function (context, req) {
                 dado.nome_alarme +
                 '</h6> </td> <td style="width: 33%"> <h6 style="text-align: center; font-size: 1.25rem; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; font-weight: 500; line-height: 1.6; letter-spacing: 0.0075em;margin: 0;"><span style="color: rgba(0, 0, 0, 0.54)">' +
                 dado.prioridade +
-                '</span> </h6> </td> <td style="width: 33%"> <p style="color: rgba(0, 0, 0, 0.54);text-align: right; min-width: 160px; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif;"> ' +
+                '</span> </h6> </td> <td style="width: 33%"> <p style="color: rgba(0, 0, 0, 0.54);text-align: center; min-width: 160px; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif;"> ' +
                  dado_date +
                 '</p> </td> </tr> </table> </div> <table style="min-width: 650px;width: 100%; display: table; border-spacing: 0; border-collapse: collapse;"> <thead style="display: table-header-group;"> <tr style="color: inherit; display: table-row; outline: 0; vertical-align: middle;">' +
                 row_names +
