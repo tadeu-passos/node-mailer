@@ -1,0 +1,15 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "WEBSITE_SLOT_NAME": "Production",
+    "FUNCTIONS_EXTENSION_VERSION": "~2",
+    "ScmType": "None",
+    "WEBSITE_AUTH_ENABLED": "False",
+    "WEBSITE_NODE_DEFAULT_VERSION": "10.16.3",
+    "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "DefaultEndpointsProtocol=https;AccountName=storageaccountregbr9d6a;AccountKey=KJiR/wUNXeSdEzVRHNj8Y7g1bWRCGJNGtA3mPyWmFqdSTewgik8nmHTi4EaCepwANNqo/LpsosMIk2TAGHr8LA==;EndpointSuffix=core.windows.net",
+    "WEBSITE_CONTENTSHARE": "funbraoutletperfdev88b0",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "WEBSITE_SITE_NAME": "funbraoutletperfdev",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=storageaccountregbr9d6a;AccountKey=KJiR/wUNXeSdEzVRHNj8Y7g1bWRCGJNGtA3mPyWmFqdSTewgik8nmHTi4EaCepwANNqo/LpsosMIk2TAGHr8LA==;EndpointSuffix=core.windows.net"
+  }
+}
