@@ -15,45 +15,50 @@
             }
         });
 
-        const html_header = '<div style="margin: auto; display: flex; outline: 0; padding: 20px; border-radius: 4px; justify-content: center; background-color: #f5f5f5;" tabindex="-1"> <div style="width: 100%;"> <h6 style="font-size: 1.25rem; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; font-weight: 500; line-height: 1.6; letter-spacing: 0.0075em;margin: 0;"> ' +
-            'Responsável: ' + nome + '</h6> ';
+        const html_header = '<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;background:#f9f9f9"> <tbody> <tr> <td style="padding:22.5pt 22.5pt 22.5pt 22.5pt"> <div align="center"> <table border="1" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;background:white;border:solid #e1e1e1 1.0pt"> <tbody> <tr> <td style="border:none;padding:7.5pt 7.5pt 7.5pt 7.5pt"> <div align="center"> <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%"> <tbody> <tr> <td style="padding:11.25pt 11.25pt 11.25pt 11.25pt"> <p class="MsoNormal" style="margin:6.0pt"><b><span style="font-size:13.5pt;font-family:Arial Narrow,sans-serif;color:#999999"> ' +
+            'Responsável: ' + nome +
+            '</span></b> </p> </td> </tr> <tr> <td colspan="2" style="border-top:solid #e1e1e1 1.0pt;border-left:none;border-bottom:solid #e1e1e1 1.0pt;border-right:none;padding:11.25pt 11.25pt 11.25pt 11.25pt">';
+
         const html_tables_array = dados.map(dado => {
-            const row_names_array = dado.dados[0];
+            const dado_date = dado.date ? 'Ocorrencias em: ' + dado.date : '&nbsp;';
+
+            const table_head = '<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse"> <tbody> <tr> <td style="border:solid #666666 1.0pt;padding:4.5pt 4.5pt 4.5pt 4.5pt"> <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse"> <thead> <tr> <td style="width: 33.3%"> <p class="MsoNormal" align="left" style="text-align:left"> <b><span style="font-size:10.5pt;font-family:Arial,sans-serif;color:#444444">' +
+                dado.nome_alarme +
+                '</span></b> </p> </td> <td style="width: 33.4%"> <p class="MsoNormal" align="center" style="text-align:center"> <b><span style="font-size:10.5pt;font-family:Arial,sans-serif;color:#444444">' +
+                dado.prioridade +
+                '</span></b> </p> </td> <td style="width: 33.3%"> <p class="MsoNormal" align="right" style="text-align:right"> <b><span style="font-size:10.5pt;font-family:Arial,sans-serif;color:#444444">' +
+                dado_date +
+                '</span></b> </p> </td> </tr> </thead> </table> </td> </tr> <tr> <td style="border:solid #666666 1.0pt;border-top:none;padding:4.5pt 4.5pt 4.5pt 4.5pt"> <table border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100.0%;border-collapse:collapse"> <thead> <tr>';
+
             let row_names = '';
-            Object.keys(row_names_array).forEach(col => {
-                row_names += '<th style="white-space: nowrap; padding: 6px 24px 6px 16px;color: rgba(0, 0, 0, 0.54); font-size: 0.75rem; font-weight: 500; line-height: 1.3125rem;display: table-cell; text-align: center; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; border-bottom: 1px solid rgba(224, 224, 224, 1); letter-spacing: 0.01071em; vertical-align: inherit;" scope="col"> ' +
-                    col + ' </th>';
+            Object.keys(dado.dados[0]).forEach(col => {
+                row_names +=
+                    '<td style="border:solid #666666 1.0pt;padding:4.5pt 4.5pt 4.5pt 4.5pt"> <p class="MsoNormal" align="center" style="text-align:center"><b><span style="font-size:8.5pt;font-family:Verdana,sans-serif;color:#333333"> ' +
+                    col +
+                    ' </span></b></p></td>';
             });
+            row_names += '</tr>';
 
             let row_body = '';
             dado.dados.forEach(row => {
-                row_body += '<tr style="color: inherit; display: table-row; outline: 0; vertical-align: middle;">';
+                row_body += '<tr>';
                 Object.keys(row).forEach(col => {
-                    row_body += '<th style="white-space: nowrap; padding: 6px 24px 6px 16px;color: rgba(0, 0, 0, 0.87); font-weight: 400;display: table-cell; font-size: 0.875rem; text-align: center; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; line-height: 1.43; border-bottom: 1px solid rgba(224, 224, 224, 1); letter-spacing: 0.01071em; vertical-align: inherit;" scope="row">' +
-                        row[col] + '</th>';
+                    row_body +=
+                        '<td style="border:solid #666666 1.0pt;border-top:none;padding:4.5pt 4.5pt 4.5pt 4.5pt"> <p class="MsoNormal"><span style="font-size:8.5pt;font-family:Verdana,sans-serif;color:#333333">' +
+                        row[col] +
+                        '</span></p></td>';
                 });
                 row_body += '</tr>';
             });
 
-            const dado_date = dado.date ? 'Ocorrencias em: ' + dado.date : '';
+            const table_tail = '</thead></table></td></tr></tbody></table><p><span style="font-size:8.5pt;font-family:Arial,sans-serif;color:#444444"><u></u>&nbsp;<u></u></span></p>';
 
-            return '<div style="min-width: 890px; width: 100%; margin-top: 24px; overflow-x: auto; margin-bottom: 16px;border-radius: 4px;color: rgba(0, 0, 0, 0.87); transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; background-color: #fff; border-style: solid;border-width: thin;border-color: #dadce0;"> <div style="padding-left: 16px; padding-right: 16px; padding-top: 16px; min-height: 64px;display: flex; position: relative; align-items: center;"> <table style="min-width: 650px;width: 100%; display: table; border-spacing: 0; border-collapse: collapse;"> <tr> <td style="width: 34%"> <h6 style="font-size: 1.25rem; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; font-weight: 500; line-height: 1.6; letter-spacing: 0.0075em;margin: 0;">' +
-                dado.nome_alarme +
-                '</h6> </td> <td style="width: 33%"> <h6 style="text-align: center; font-size: 1.25rem; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif; font-weight: 500; line-height: 1.6; letter-spacing: 0.0075em;margin: 0;"><span style="color: rgba(0, 0, 0, 0.54)">' +
-                dado.prioridade +
-                '</span> </h6> </td> <td style="width: 33%"> <p style="color: rgba(0, 0, 0, 0.54);text-align: center; min-width: 160px; font-family: \'Roboto\', \'Helvetica\', \'Arial\', sans-serif;"> ' +
-                 dado_date +
-                '</p> </td> </tr> </table> </div> <table style="min-width: 650px;width: 100%; display: table; border-spacing: 0; border-collapse: collapse;"> <thead style="display: table-header-group;"> <tr style="color: inherit; display: table-row; outline: 0; vertical-align: middle;">' +
-                row_names +
-                '</tr> </thead> <tbody style="display: table-row-group;">' +
-                row_body +
-                '</tbody> </table> </div>'
+            return table_head + row_names + row_body + table_tail;
         });
 
         const html_tables = html_tables_array.join('');
 
-        const html_tail = '</div> </div>';
-
+        const html_tail = '</td></tr></tbody></table></div></td></tr></tbody></table></div></td></tr></tbody></table>';
 
         const mailOptions = {
             from: 'artefact.test.br@gmail.com',
